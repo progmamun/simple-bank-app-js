@@ -1,5 +1,5 @@
 'use strict';
-document.getElementById('login-submit').addEventListener('click', function() {
+document.getElementById('login-submit').addEventListener('click', function () {
   const emailField = document.getElementById('user-email');
   const userEmail = emailField.value;
 
@@ -7,7 +7,7 @@ document.getElementById('login-submit').addEventListener('click', function() {
   const passwordField = document.getElementById('user-password');
   const userPassword = passwordField.value;
 
-  if(userEmail == 'mamun@bank.com' && userPassword == 'secret') {
-    
+  if (userEmail == 'mamun@bank.com' && userPassword == 'secret') {
+    window.location.href = 'banking.html';
   }
-})
+});
