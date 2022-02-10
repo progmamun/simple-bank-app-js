@@ -10,6 +10,6 @@ document.getElementById('login-submit').addEventListener('click', function () {
 
   // check email and password
   if (userEmail == 'mamun@bank.com' && userPassword == 'secret') {
-    window.location.href = 'banking.html';
+    window.location.href = '/banking.html';
   }
 });
