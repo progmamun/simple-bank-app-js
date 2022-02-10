@@ -16,14 +16,14 @@ document
     const previousDepositAmount = parseFloat(previousDepositText);
 
     const newDepositTotal = previousDepositAmount + newDepositAmount;
-    balanceTotal.innerText = newDepositTotal;
+    depositTotal.innerText = newDepositTotal;
 
     // update account balance
     const balanceTotal = document.getElementById('balance-total');
 
     const balanceTotalText = balanceTotal.innerText;
     const previousBalanceTotal = parseFloat(balanceTotalText);
-    const newBalanceTotal = previousBalanceTotal + newDepositAmount;
+    const newBalanceTotal = previousBalanceTotal + newBalanceTotal;
 
     balanceTotal.innerText = newBalanceTotal;
     // clear the deposit input field
@@ -42,7 +42,7 @@ document
     const withdrawTotal = document.getElementById('withdraw-total');
 
     const previousWithdrawText = withdrawTotal.innerText;
-    const previousWithdrawText = parseFloat(previousWithdrawText);
+    const previousWithdrawTotal = parseFloat(previousWithdrawText);
 
     const newWithdrawTotal = previousWithdrawTotal + newWithdrawAmount;
     withdrawTotal.innerText = newWithdrawTotal;
