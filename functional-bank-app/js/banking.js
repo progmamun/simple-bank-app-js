@@ -1,29 +1,28 @@
-'use strict';
 function doubleIt(num) {
   const result = num * 2;
   return result;
 }
 const fiveDouble = doubleIt(5);
-const serverDouble = doubleIt(7);
+const severDouble = doubleIt(7);
 
 function getInputValue(inputId) {
-  // debugger;
+  debugger;
   const inputField = document.getElementById(inputId);
   const inputAmountText = inputField.value;
   const amountValue = parseFloat(inputAmountText);
-
   // clear input field
   inputField.value = '';
   return amountValue;
 }
 
 function updateTotalField(totalFieldId, amount) {
+  // debugger;
   const totalElement = document.getElementById(totalFieldId);
   const totalText = totalElement.innerText;
   const previousTotal = parseFloat(totalText);
-
   totalElement.innerText = previousTotal + amount;
 }
+
 function getCurrentBalance() {
   const balanceTotal = document.getElementById('balance-total');
   const balanceTotalText = balanceTotal.innerText;
@@ -34,7 +33,6 @@ function getCurrentBalance() {
 function updateBalance(amount, isAdd) {
   const balanceTotal = document.getElementById('balance-total');
   const previousBalanceTotal = getCurrentBalance();
-
   if (isAdd == true) {
     balanceTotal.innerText = previousBalanceTotal + amount;
   } else {
@@ -46,7 +44,6 @@ document
   .getElementById('deposit-button')
   .addEventListener('click', function () {
     const depositAmount = getInputValue('deposit-input');
-
     if (depositAmount > 0) {
       updateTotalField('deposit-total', depositAmount);
       updateBalance(depositAmount, true);
@@ -57,7 +54,6 @@ document
 document
   .getElementById('withdraw-button')
   .addEventListener('click', function () {
-    const withdrawAmount = getInputValue('withdraw-input');
     const withdrawAmount = getInputValue('withdraw-input');
     const currentBalance = getCurrentBalance();
     if (withdrawAmount > 0 && withdrawAmount < currentBalance) {
