@@ -16,6 +16,14 @@ function getInputValue(inputId) {
   return amountValue;
 }
 
+function updateTotalField(totalFieldId, amount) {
+  const totalElement = document.getElementById(totalFieldId);
+  const totalText = totalElement.innerText;
+  const previousTotal = parseFloat(totalText);
+
+  totalElement.innerText = previousTotal + amount;
+}
+
 document
   .getElementById('deposit-button')
   .addEventListener('click', function () {
@@ -23,11 +31,12 @@ document
     // console.log(depositAmount);
 
     // get current deposit
-    const depositTotal = document.getElementById('deposit-total');
-    const depositTotalText = depositTotal.innerText;
-    const previousDepositTotal = parseFloat(depositTotalText);
-    depositTotal.innerText = previousDepositTotal + depositAmount;
+    // const depositTotal = document.getElementById('deposit-total');
+    // const depositTotalText = depositTotal.innerText;
+    // const previousDepositTotal = parseFloat(depositTotalText);
+    // depositTotal.innerText = previousDepositTotal + depositAmount;
     // console.log(depositTotalText);
+    updateTotalField('deposit-total', depositAmount);
 
     // update balance
     const balanceTotal = document.getElementById('balance-total');
@@ -47,12 +56,12 @@ document
     const withdrawAmount = getInputValue('withdraw-input');
 
     // update withdraw total
-    const withdrawTotal = document.getElementById('withdraw-total');
-    const previousWithdrawTotalText = withdrawTotal.innerText;
-    const previousWithdrawTotal = parseFloat(previousWithdrawTotalText);
+    // const withdrawTotal = document.getElementById('withdraw-total');
+    // const previousWithdrawTotalText = withdrawTotal.innerText;
+    // const previousWithdrawTotal = parseFloat(previousWithdrawTotalText);
+    // withdrawTotal.innerText = previousWithdrawTotal + withdrawAmount;
 
-    withdrawTotal.innerText = previousWithdrawTotal + withdrawAmount;
-
+    updateTotalField('withdraw-total', withdrawAmount);
     // update balance after withdraw
     const balanceTotal = document.getElementById('balance-total');
     const balanceTotalText = balanceTotal.innerText;
