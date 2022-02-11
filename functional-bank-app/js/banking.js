@@ -37,6 +37,13 @@ document
 
     withdrawTotal.innerText = previousWithdrawTotal + withdrawAmount;
 
+    // update balance after withdraw
+    const balanceTotal = document.getElementById('balance-total');
+    const balanceTotalText = balanceTotal.innerText;
+    const previousBalanceTotal = parseFloat(balanceTotalText);
+
+    balanceTotal.innerText = previousBalanceTotal - withdrawAmount;
+
     // clear withdraw input field
     withdrawInput.value = '';
   });
