@@ -1,15 +1,9 @@
-function getInputValue() {
-  const depositInput = document.getElementById('deposit-input');
-  const depositAmountText = depositInput.value;
-  const depositAmount = parseFloat(depositAmountText);
-
-  return depositAmount;
-}
-
 document
   .getElementById('deposit-button')
   .addEventListener('click', function () {
-    const depositAmount = getInputValue();
+    const depositInput = document.getElementById('deposit-input');
+    const depositAmountText = depositInput.value;
+    const depositAmount = parseFloat(depositAmountText);
     // console.log(depositAmount);
 
     // get current deposit
