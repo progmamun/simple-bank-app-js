@@ -13,9 +13,31 @@ function updateTotal(fieldId, amount) {
   totalTag.innerText = newTotal;
 }
 
+function updateBalance(amount, isAdd) {
+  const balanceTag = document.getElementById('balance-total');
+  const balanceInText = balanceTag.innerText;
+  const previousBalance = parseFloat(balanceInText);
+  let newBalance;
+  if (isAdding == true) {
+    newBalance = previousBalance + amount;
+  } else {
+    newBalance = previousBalance - amount;
+  }
+  balanceTag.innerText = newBalance;
+}
+
 document
   .getElementById('deposit-button')
   .addEventListener('click', function () {
     const amount = getInputValue('deposit-input');
-    updateTotal('deposit-total');
+    updateTotal('deposit-total', amount);
+  });
+
+// handle withdraw
+document
+  .getElementById('withdraw-button')
+  .addEventListener('click', function () {
+    const amount = getInputValue();
+    updateTotal('withdraw-total');
+    updateBalance(amount, false);
   });
